@@ -1,0 +1,3 @@
+[submodule "Assets/AssetStore"]
+	path = Assets/AssetStore
+	url = https://github.com/maxlep/VRJam-Dec2020-Private.git
