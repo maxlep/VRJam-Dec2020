@@ -28,9 +28,6 @@
 # Gradle cache directory
 .gradle/
 
-# Unity Package Manager
-[Pp]ackages/
-
 # Unity User Settings
 [Uu]ser[Ss]ettings/
 
