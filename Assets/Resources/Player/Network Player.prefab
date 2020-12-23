@@ -3657,6 +3657,12 @@ MonoBehaviour:
   headTargetRig: {fileID: 11400000, guid: 8baef60546425774da71bf4f0668efaa, type: 2}
   leftHandTargetRig: {fileID: 11400000, guid: 740ea62174caffb498fd16ed2d4b119f, type: 2}
   rightHandTargetRig: {fileID: 11400000, guid: 69ee0f8c5d56ce24fb05fcd59154805f, type: 2}
+  leftHandAnimatorRig: {fileID: 11400000, guid: d026283612e22bf4f877c577fc1872b1,
+    type: 2}
+  rightHandAnimatorRig: {fileID: 11400000, guid: 0b78659e39b7a474abb3a778f5595deb,
+    type: 2}
+  leftHandAnimator: {fileID: 1133416595}
+  rightHandAnimator: {fileID: 1997393812}
 --- !u!1 &4745064690610958285
 GameObject:
   m_ObjectHideFlags: 0

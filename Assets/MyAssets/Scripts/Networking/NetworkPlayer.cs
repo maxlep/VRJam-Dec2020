@@ -28,15 +28,15 @@ public class NetworkPlayer : MonoBehaviour
         {
             foreach (var rend in head.GetComponentsInChildren<Renderer>())
             {
-                rend.enabled = false;
+                //rend.enabled = false;
             }
             foreach (var rend in leftHand.GetComponentsInChildren<Renderer>())
             {
-                rend.enabled = false;
+                //rend.enabled = false;
             }
             foreach (var rend in rightHand.GetComponentsInChildren<Renderer>())
             {
-                rend.enabled = false;
+                //rend.enabled = false;
             }
         }
     }
@@ -66,9 +66,18 @@ public class NetworkPlayer : MonoBehaviour
         {
             animator.SetFloat(paramName, target.GetFloat(paramName));
         };
+        
+        Action<int> copyLayerWeight = (int layerIndex) =>
+        {
+            animator.SetLayerWeight(layerIndex, target.GetLayerWeight(layerIndex));
+        };
 
         copyParam("Pinch");
         copyParam("Pose");
         copyParam("Flex");
+
+        copyLayerWeight(0);
+        copyLayerWeight(1);
+        copyLayerWeight(2);
     }
 }
