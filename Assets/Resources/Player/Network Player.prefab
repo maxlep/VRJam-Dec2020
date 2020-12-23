@@ -4818,7 +4818,7 @@ MonoBehaviour:
     plantFeet: 1
     spine:
       bones: []
-      headTarget: {fileID: 1753504504804738464}
+      headTarget: {fileID: 7221602929244831598}
       pelvisTarget: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
@@ -4839,7 +4839,7 @@ MonoBehaviour:
       rootHeadingOffset: 0
     leftArm:
       bones: []
-      target: {fileID: 1133416594}
+      target: {fileID: 4800825097279133543}
       bendGoal: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
@@ -4859,7 +4859,7 @@ MonoBehaviour:
         m_RotationOrder: 4
     rightArm:
       bones: []
-      target: {fileID: 1997393811}
+      target: {fileID: 5417571286155136097}
       bendGoal: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
