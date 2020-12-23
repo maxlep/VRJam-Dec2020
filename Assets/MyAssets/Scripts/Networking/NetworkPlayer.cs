@@ -72,8 +72,8 @@ public class NetworkPlayer : MonoBehaviour
         };
 
         copyParam("Pinch");
-        copyParam("Pose");
         copyParam("Flex");
+        animator.SetInteger("Pose", target.GetInteger("Pose"));
 
         copyLayerWeight(0);
         copyLayerWeight(1);
