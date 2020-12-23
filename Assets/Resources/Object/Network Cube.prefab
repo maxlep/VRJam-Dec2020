@@ -182,7 +182,7 @@ MonoBehaviour:
   AnimateScaleTarget: {fileID: 460079558}
   AnimateScaleDuration: 0.2
   RemapCurveZero: 1
-  RemapCurveOne: 0.6
+  RemapCurveOne: 2
   Offset: 0
   AnimateX: 1
   AnimateScaleX:
@@ -431,8 +431,8 @@ MonoBehaviour:
   GrabPhysics: 4
   GrabMechanic: 1
   GrabSpeed: 10
-  RemoteGrabbable: 0
-  RemoteGrabDistance: 1
+  RemoteGrabbable: 1
+  RemoteGrabDistance: 2.5
   ThrowForceMultiplier: 1.5
   ThrowForceMultiplierAngular: 1.125
   BreakDistance: 1.5
@@ -623,7 +623,7 @@ MonoBehaviour:
   OwnershipTransfer: 1
   ObservedComponents:
   - {fileID: 757285375287739908}
-  viewIdField: 0
+  viewIdField: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &757285375287739908

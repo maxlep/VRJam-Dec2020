@@ -23,7 +23,7 @@ namespace MyAssets.Scripts.Interactions
 
         private void Update()
         {
-            if (currentGrabber == null) return; 
+            if (currentGrabber == null) return;
             
             if (InputBridge.Instance.GetGrabbedControllerBinding(fireModeBinding, currentGrabber.HandSide))
             {
@@ -32,7 +32,7 @@ namespace MyAssets.Scripts.Interactions
 
             if (InputBridge.Instance.GetGrabbedControllerBinding(fireBinding, currentGrabber.HandSide))
             {
-                if (canShoot)
+                if (canShoot && photonView.IsMine)
                 {
                     canShoot = false;
                     
@@ -46,7 +46,7 @@ namespace MyAssets.Scripts.Interactions
                 }
             } else if (InputBridge.Instance.GetGrabbedControllerBinding(fireHoldBinding, currentGrabber.HandSide))
             {
-                if (canShoot && automaticFire)
+                if (canShoot && automaticFire && photonView.IsMine)
                 {
                     canShoot = false;
 
@@ -69,11 +69,17 @@ namespace MyAssets.Scripts.Interactions
             rb.velocity = -firePoint.right * shootForce;
         }
 
+        [PunRPC]
+        public void SetFireMode(bool automatic)
+        {
+            automaticFire = automatic;
+        }
+
         private void ToggleFireMode()
         {
             if (photonView.IsMine)
             {
-                automaticFire = !automaticFire;
+                photonView.RPC("SetFireMode", RpcTarget.AllBuffered, !automaticFire);
             }
         }
 
