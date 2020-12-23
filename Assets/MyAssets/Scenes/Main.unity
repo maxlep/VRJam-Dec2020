@@ -124393,29 +124393,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 460079565, guid: 854018c76d0dee34aae3ea58f7a5990a, type: 3}
-      propertyPath: RemapCurveOne
-      value: 2
+    - target: {fileID: 1793841890, guid: 854018c76d0dee34aae3ea58f7a5990a, type: 3}
+      propertyPath: secondsToLive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 757285375287739906, guid: 854018c76d0dee34aae3ea58f7a5990a,
         type: 3}
       propertyPath: m_Name
       value: Network Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 757285375287739907, guid: 854018c76d0dee34aae3ea58f7a5990a,
-        type: 3}
-      propertyPath: RemoteGrabbable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 757285375287739907, guid: 854018c76d0dee34aae3ea58f7a5990a,
-        type: 3}
-      propertyPath: RemoteGrabDistance
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 757285375287739909, guid: 854018c76d0dee34aae3ea58f7a5990a,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 757285375287739912, guid: 854018c76d0dee34aae3ea58f7a5990a,
         type: 3}

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Photon.Pun;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class NetworkTimeToLive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (secondsToLive == 0) return;
+
         LeanTween.value(0f, 1f, secondsToLive).setOnComplete(() =>
         {
             PhotonNetwork.Destroy(photonView);

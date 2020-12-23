@@ -37,7 +37,7 @@ namespace MyAssets.Scripts.Interactions
                     canShoot = false;
                     
                     // Fire();
-                    photonView.RPC("Fire", RpcTarget.AllBuffered);
+                    Fire();
 
                     LeanTween.value(0f, 1f, cooldown).setOnComplete(() =>
                     {
@@ -51,7 +51,7 @@ namespace MyAssets.Scripts.Interactions
                     canShoot = false;
 
                     // Fire();
-                    photonView.RPC("Fire", RpcTarget.AllBuffered);
+                    Fire();
 
                     LeanTween.value(0f, 1f, cooldown).setOnComplete(() =>
                     {
