@@ -23,18 +23,10 @@ public class NetworkPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Disable renderers for my networked hands.
+        //Disable renderers for my networked player
         if (photonView.IsMine)
         {
-            foreach (var rend in head.GetComponentsInChildren<Renderer>())
-            {
-                rend.enabled = false;
-            }
-            foreach (var rend in leftHand.GetComponentsInChildren<Renderer>())
-            {
-                rend.enabled = false;
-            }
-            foreach (var rend in rightHand.GetComponentsInChildren<Renderer>())
+            foreach (var rend in gameObject.GetComponentsInChildren<Renderer>())
             {
                 rend.enabled = false;
             }
