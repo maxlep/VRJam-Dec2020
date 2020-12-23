@@ -28,15 +28,15 @@ public class NetworkPlayer : MonoBehaviour
         {
             foreach (var rend in head.GetComponentsInChildren<Renderer>())
             {
-                //rend.enabled = false;
+                rend.enabled = false;
             }
             foreach (var rend in leftHand.GetComponentsInChildren<Renderer>())
             {
-                //rend.enabled = false;
+                rend.enabled = false;
             }
             foreach (var rend in rightHand.GetComponentsInChildren<Renderer>())
             {
-                //rend.enabled = false;
+                rend.enabled = false;
             }
         }
     }
@@ -48,10 +48,9 @@ public class NetworkPlayer : MonoBehaviour
             MapTransform(head, headTargetRig.Value);
             MapTransform(leftHand, leftHandTargetRig.Value);
             MapTransform(rightHand, rightHandTargetRig.Value);
+            UpdateHandAnimation(leftHandAnimator, leftHandAnimatorRig.Value);
+            UpdateHandAnimation(rightHandAnimator, rightHandAnimatorRig.Value);
         }
-
-        UpdateHandAnimation(leftHandAnimator, leftHandAnimatorRig.Value);
-        UpdateHandAnimation(rightHandAnimator, rightHandAnimatorRig.Value);
     }
 
     private void MapTransform(Transform source, Transform target)
