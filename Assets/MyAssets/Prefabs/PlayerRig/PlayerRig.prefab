@@ -65238,7 +65238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8251948788710255142
 Transform:
   m_ObjectHideFlags: 0
@@ -73826,6 +73826,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elf_HumanoidRig_NoHead
       objectReference: {fileID: 0}
+    - target: {fileID: 4112984690662791721, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e16d4afbfe6d718459dba05fe87d5d08, type: 2}
+    - target: {fileID: 4112984690662791721, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2848cd28caf7ce44cb82012eea31def8, type: 2}
+    - target: {fileID: 4112984690662791721, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2848cd28caf7ce44cb82012eea31def8, type: 2}
+    - target: {fileID: 4112984690662791721, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 854e5231e936ca04f85d6a9f8167dfab, type: 2}
+    - target: {fileID: 4112984690662791721, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 4217796364934669478, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+    - target: {fileID: 4112984690662791721, guid: 129420f57099e4e4eaa36a209dd7f85c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb2ec4573cbeb6f44ae4ef7305bd94f1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 129420f57099e4e4eaa36a209dd7f85c, type: 3}
 --- !u!4 &7197178070541949248 stripped
