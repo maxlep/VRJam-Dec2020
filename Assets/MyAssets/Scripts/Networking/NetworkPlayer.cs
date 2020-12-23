@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using BNG;
 using Photon.Pun;
 using UnityEngine;
 
@@ -12,6 +14,11 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private TransformSceneReference headTargetRig;
     [SerializeField] private TransformSceneReference leftHandTargetRig;
     [SerializeField] private TransformSceneReference rightHandTargetRig;
+
+    [SerializeField] private AnimatorSceneReference leftHandAnimatorRig;
+    [SerializeField] private AnimatorSceneReference rightHandAnimatorRig;
+    [SerializeField] private Animator leftHandAnimator;
+    [SerializeField] private Animator rightHandAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -42,11 +49,26 @@ public class NetworkPlayer : MonoBehaviour
             MapTransform(leftHand, leftHandTargetRig.Value);
             MapTransform(rightHand, rightHandTargetRig.Value);
         }
+
+        UpdateHandAnimation(leftHandAnimator, leftHandAnimatorRig.Value);
+        UpdateHandAnimation(rightHandAnimator, rightHandAnimatorRig.Value);
     }
 
     private void MapTransform(Transform source, Transform target)
     {
         source.position = target.position;
         source.rotation = target.rotation;
+    }
+
+    private void UpdateHandAnimation(Animator animator, Animator target)
+    {
+        Action<string> copyParam = (string paramName) =>
+        {
+            animator.SetFloat(paramName, target.GetFloat(paramName));
+        };
+
+        copyParam("Pinch");
+        copyParam("Pose");
+        copyParam("Flex");
     }
 }

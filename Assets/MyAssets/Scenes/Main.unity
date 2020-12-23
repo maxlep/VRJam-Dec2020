@@ -4757,6 +4757,12 @@ Transform:
   m_Father: {fileID: 1369620275}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &103170373 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7505077403021888841, guid: 2cd2e59bdbafc2e48aac8cd6cd689dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6320925197952382705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &109124496
 GameObject:
   m_ObjectHideFlags: 0
@@ -77571,7 +77577,13 @@ MonoBehaviour:
   GameObjectSceneList: []
   ParticleSystemSceneList: []
   MMFeedbacksSceneList: []
-  AnimatorSceneList: []
+  AnimatorSceneList:
+  - animatorSceneReference: {fileID: 11400000, guid: d026283612e22bf4f877c577fc1872b1,
+      type: 2}
+    animatorSceneValue: {fileID: 2133556782}
+  - animatorSceneReference: {fileID: 11400000, guid: 0b78659e39b7a474abb3a778f5595deb,
+      type: 2}
+    animatorSceneValue: {fileID: 103170373}
   CameraSceneList: []
 --- !u!4 &1421481911
 Transform:
@@ -123361,6 +123373,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132090680}
   m_Mesh: {fileID: 4300050, guid: 1f61f9023149fdd4f8030b05848fbb9b, type: 3}
+--- !u!95 &2133556782 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1975551212542033817, guid: 2cd2e59bdbafc2e48aac8cd6cd689dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6320925197952382705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2135130145
 PrefabInstance:
   m_ObjectHideFlags: 0
