@@ -14,11 +14,12 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private TransformSceneReference headTargetRig;
     [SerializeField] private TransformSceneReference leftHandTargetRig;
     [SerializeField] private TransformSceneReference rightHandTargetRig;
-
     [SerializeField] private AnimatorSceneReference leftHandAnimatorRig;
     [SerializeField] private AnimatorSceneReference rightHandAnimatorRig;
     [SerializeField] private Animator leftHandAnimator;
     [SerializeField] private Animator rightHandAnimator;
+    [SerializeField] private CharacterController charController;
+    [SerializeField] private CharControllerSceneReference charControllerRig;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,11 @@ public class NetworkPlayer : MonoBehaviour
             {
                 rend.enabled = false;
             }
+            
+            //Ignore collisions between rig and your own networked player
+            Collider charControllerCollider = charController.GetComponent<Collider>();
+            Collider charControllerRigCollider = charControllerRig.Value.GetComponent<Collider>();
+            Physics.IgnoreCollision(charControllerCollider, charControllerRigCollider);
         }
     }
 
@@ -42,6 +48,7 @@ public class NetworkPlayer : MonoBehaviour
             MapTransform(rightHand, rightHandTargetRig.Value);
             UpdateHandAnimation(leftHandAnimator, leftHandAnimatorRig.Value);
             UpdateHandAnimation(rightHandAnimator, rightHandAnimatorRig.Value);
+            MapCharController(charController, charControllerRig.Value);
         }
     }
 
@@ -49,6 +56,14 @@ public class NetworkPlayer : MonoBehaviour
     {
         source.position = target.position;
         source.rotation = target.rotation;
+    }
+
+    private void MapCharController(CharacterController source, CharacterController target)
+    {
+        source.transform.position = target.transform.position;
+        source.center = target.center;
+        source.height = target.height;
+        source.radius = target.radius;
     }
 
     private void UpdateHandAnimation(Animator animator, Animator target)

@@ -24,6 +24,9 @@ public class SceneReferenceManager : MonoBehaviour
 
     [SerializeField] [PropertySpace(SpaceBefore = 5, SpaceAfter = 5)]
     private List<CameraScenePair> CameraSceneList = new List<CameraScenePair>();
+    
+    [SerializeField] [PropertySpace(SpaceBefore = 5, SpaceAfter = 5)]
+    private List<CharControllerScenePair> CharControllerSceneList = new List<CharControllerScenePair>();
 
     private void Awake()
     {
@@ -56,6 +59,11 @@ public class SceneReferenceManager : MonoBehaviour
         {
             if (cameraScenePair.AreValuesAssigned)
                 cameraScenePair.AssignValueToReference();
+        }
+        foreach (var charControllerScenePair in CharControllerSceneList)
+        {
+            if (charControllerScenePair.AreValuesAssigned)
+                charControllerScenePair.AssignValueToReference();
         }
     }
 }
@@ -177,5 +185,25 @@ public class CameraScenePair
     public void AssignValueToReference()
     {
         cameraSceneReference.Value = cameraSceneValue;
+    }
+}
+
+[Serializable]
+public class CharControllerScenePair
+{
+    [SerializeField] [LabelText("Reference")] [LabelWidth(125f)]
+    [Required]
+    private CharControllerSceneReference charControllerSceneReference;
+
+    [SerializeField] [LabelText("Scene Value")] [LabelWidth(125f)]
+    [Required] [SceneObjectsOnly]
+    private CharacterController charControllerSceneValue;
+
+    public bool AreValuesAssigned =>
+        (charControllerSceneValue != null && charControllerSceneReference != null);
+    
+    public void AssignValueToReference()
+    {
+        charControllerSceneReference.Value = charControllerSceneValue;
     }
 }
