@@ -16,7 +16,8 @@ public class NetworkTimeToLive : MonoBehaviour
 
         LeanTween.value(0f, 1f, secondsToLive).setOnComplete(() =>
         {
-            PhotonNetwork.Destroy(photonView);
+            if (photonView.IsMine)
+                PhotonNetwork.Destroy(photonView);
         });
     }
 }

@@ -798,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f0d57aae8e9724fa5b025f66385d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToLive: 30
+  secondsToLive: 10
   photonView: {fileID: 757285375287739909}
 --- !u!1 &7202144324807163802
 GameObject:
