@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BNG;
+using MyAssets.Scripts.Interactions;
 using Photon.Pun;
 using UnityEngine;
 
@@ -20,7 +21,9 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private Animator rightHandAnimator;
     [SerializeField] private CharacterController charController;
     [SerializeField] private CharControllerSceneReference charControllerRig;
-
+    [SerializeField] private TransformSceneReference playerControllerSceneReference;
+    [SerializeField] private ResizePlayer resizeScript;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,19 +46,27 @@ public class NetworkPlayer : MonoBehaviour
     {
         if (photonView.IsMine)
         {
-            MapTransform(head, headTargetRig.Value);
-            MapTransform(leftHand, leftHandTargetRig.Value);
-            MapTransform(rightHand, rightHandTargetRig.Value);
+            MapLocRot(head, headTargetRig.Value);
+            MapLocRot(leftHand, leftHandTargetRig.Value);
+            MapLocRot(rightHand, rightHandTargetRig.Value);
             UpdateHandAnimation(leftHandAnimator, leftHandAnimatorRig.Value);
             UpdateHandAnimation(rightHandAnimator, rightHandAnimatorRig.Value);
             MapCharController(charController, charControllerRig.Value);
+            
+            //Map scale from networked player -> local rig (shrink gun)
+            MapScale(playerControllerSceneReference.Value, head);
         }
     }
 
-    private void MapTransform(Transform source, Transform target)
+    private void MapLocRot(Transform source, Transform target)
     {
         source.position = target.position;
         source.rotation = target.rotation;
+    }
+    
+    private void MapScale(Transform source, Transform target)
+    {
+        source.localScale = target.localScale;
     }
 
     private void MapCharController(CharacterController source, CharacterController target)
@@ -85,5 +96,19 @@ public class NetworkPlayer : MonoBehaviour
         copyLayerWeight(0);
         copyLayerWeight(1);
         copyLayerWeight(2);
+    }
+
+    public void ScalePlayerUp(float rate)
+    {
+        //if (photonView.IsMine)
+        
+        photonView.RPC("ScaleUp", RpcTarget.AllBuffered, rate);
+        
+    }
+
+    [PunRPC]
+    public void ScaleUp(float rate)
+    {
+        resizeScript.ScaleUp(rate);
     }
 }
