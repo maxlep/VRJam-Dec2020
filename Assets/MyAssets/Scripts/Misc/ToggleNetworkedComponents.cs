@@ -15,12 +15,18 @@ public class ToggleNetworkedComponents : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
+        
+        //When join room, disable components on others
+        //Instead of running those scripts locally for others, will receive info from their client
         EnableTheirComponents(false);
     }
 
     public override void OnLeftRoom()
     {
         base.OnLeftRoom();
+        
+        //When leave room, turn on the components for others
+        //Not sure this is needed
         EnableTheirComponents(true);
     }
 

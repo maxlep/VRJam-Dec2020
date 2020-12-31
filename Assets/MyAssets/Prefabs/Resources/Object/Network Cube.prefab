@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f0d57aae8e9724fa5b025f66385d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToLive: 10
+  secondsToLive: 0
   photonView: {fileID: 757285375287739909}
 --- !u!114 &2434239167272010381
 MonoBehaviour:

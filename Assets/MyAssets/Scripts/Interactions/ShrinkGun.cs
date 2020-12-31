@@ -27,6 +27,8 @@ public class ShrinkGun : MonoBehaviour
                 Fire();
             }
         }
+
+        Grabbable grabbable;
     }
     
     public void Fire()
