@@ -523,11 +523,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d7447be27454243ad3df3017f70346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 1353527988121401333}
+  enemyLayer: Enemy
   firePoint: {fileID: 4084051244652366470}
   fireMask:
     serializedVersion: 2
-    m_Bits: 4097
+    m_Bits: 12289
   shootParticleSpeed: 200
+  damage: 20
   shootParticlesPrefab: {fileID: 148698, guid: 2a6c671eff9a71a418bd43aa8d6188d2, type: 3}
   impactParticlesPrefabs:
   - {fileID: 1081232501105962, guid: 7af4993536e416b4ea26c333e9d0683d, type: 3}
