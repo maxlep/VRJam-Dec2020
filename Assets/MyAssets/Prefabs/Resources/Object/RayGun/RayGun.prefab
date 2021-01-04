@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 4144154028740113277}
   - component: {fileID: 7083563901227421087}
   - component: {fileID: 4554484877811535265}
+  - component: {fileID: 8319524669447152046}
   m_Layer: 10
   m_Name: RayGun
   m_TagString: Untagged
@@ -535,6 +536,20 @@ MonoBehaviour:
   impactParticlesPrefabs:
   - {fileID: 1081232501105962, guid: 7af4993536e416b4ea26c333e9d0683d, type: 3}
   - {fileID: 152634, guid: f86cd234e51352742ab17b9f5001ae45, type: 3}
+--- !u!114 &8319524669447152046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353527988121401330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb2f4789f54f864f84f5c8da547c712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView: {fileID: 1353527988121401333}
+  rigidbody: {fileID: 1353527988121401340}
 --- !u!1 &1750450557244796981
 GameObject:
   m_ObjectHideFlags: 0

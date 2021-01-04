@@ -4392,6 +4392,18 @@ MonoBehaviour:
   charControllerRig: {fileID: 11400000, guid: 883174ca0b02db440b914f949c6dcfdf, type: 2}
   playerControllerSceneReference: {fileID: 11400000, guid: 350f7eaa39d1b8e44b26306224f0beec,
     type: 2}
+  holsterLeftSceneReference: {fileID: 11400000, guid: ac9d9cdc89c65bd428d1c47519e470b6,
+    type: 2}
+  holsterRightSceneReference: {fileID: 11400000, guid: 424f7457651ec804b90cf130c9d8b254,
+    type: 2}
+  shoulderLeftSceneReference: {fileID: 11400000, guid: beb3cc2fd4470064d9993e53ffa67f72,
+    type: 2}
+  shoulderRightSceneReference: {fileID: 11400000, guid: 364e5dad115ffa54982b99161c3243c3,
+    type: 2}
+  holsterLeftGrabbablePath: Object/Flashlight/Flashlight
+  holsterRightGrabbablePath: 
+  shoulderLeftGrabbablePath: 
+  shoulderRightGrabbablePath: 
   resizeScript: {fileID: 780171287239112949}
 --- !u!114 &780171287239112949
 MonoBehaviour:

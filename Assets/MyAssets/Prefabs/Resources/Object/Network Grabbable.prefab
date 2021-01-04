@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 9014344383105659759}
   - component: {fileID: 9014344383105659757}
   - component: {fileID: 6220367039501203430}
+  - component: {fileID: 8841126069033433913}
   m_Layer: 10
   m_Name: Network Grabbable
   m_TagString: Untagged
@@ -632,6 +633,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 9014344383105659758}
   tooltipText: {fileID: 8714120246650384102}
+--- !u!114 &8841126069033433913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014344383105659753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb2f4789f54f864f84f5c8da547c712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView: {fileID: 9014344383105659758}
+  rigidbody: {fileID: 9014344383105659751}
 --- !u!1001 &3913894944339289363
 PrefabInstance:
   m_ObjectHideFlags: 0

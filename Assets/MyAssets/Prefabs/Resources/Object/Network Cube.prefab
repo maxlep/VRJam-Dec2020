@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 6123468592931585053}
   - component: {fileID: 1793841890}
   - component: {fileID: 2434239167272010381}
+  - component: {fileID: 2082660415397440113}
   m_Layer: 10
   m_Name: Network Cube
   m_TagString: Untagged
@@ -792,6 +793,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 757285375287739909}
   tooltipText: {fileID: 1114024409950165901}
+--- !u!114 &2082660415397440113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757285375287739906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb2f4789f54f864f84f5c8da547c712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView: {fileID: 757285375287739909}
+  rigidbody: {fileID: 757285375287739916}
 --- !u!1 &7202144324807163802
 GameObject:
   m_ObjectHideFlags: 0

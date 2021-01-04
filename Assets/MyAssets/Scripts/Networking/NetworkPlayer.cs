@@ -5,6 +5,7 @@ using BNG;
 using MyAssets.Scripts.Interactions;
 using Photon.Pun;
 using UnityEngine;
+using WebSocketSharp;
 
 public class NetworkPlayer : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private CharacterController charController;
     [SerializeField] private CharControllerSceneReference charControllerRig;
     [SerializeField] private TransformSceneReference playerControllerSceneReference;
+    [SerializeField] private TransformSceneReference holsterLeftSceneReference;
+    [SerializeField] private TransformSceneReference holsterRightSceneReference;
+    [SerializeField] private TransformSceneReference shoulderLeftSceneReference;
+    [SerializeField] private TransformSceneReference shoulderRightSceneReference;
+    [SerializeField] private string holsterLeftGrabbablePath;
+    [SerializeField] private string holsterRightGrabbablePath;
+    [SerializeField] private string shoulderLeftGrabbablePath;
+    [SerializeField] private string shoulderRightGrabbablePath;
     [SerializeField] private ResizePlayer resizeScript;
     
     // Start is called before the first frame update
@@ -39,6 +48,8 @@ public class NetworkPlayer : MonoBehaviour
             Collider charControllerCollider = charController.GetComponent<Collider>();
             Collider charControllerRigCollider = charControllerRig.Value.GetComponent<Collider>();
             Physics.IgnoreCollision(charControllerCollider, charControllerRigCollider);
+
+            InstantiateEquipGrabbables();
         }
     }
 
@@ -110,5 +121,17 @@ public class NetworkPlayer : MonoBehaviour
     public void ScaleUp(float rate)
     {
         resizeScript.ScaleUp(rate);
+    }
+
+    private void InstantiateEquipGrabbables()
+    {
+        if (!holsterLeftGrabbablePath.IsNullOrEmpty())
+        {
+            GameObject leftHolsterObj = PhotonNetwork.Instantiate(holsterLeftGrabbablePath, 
+                transform.position, transform.rotation);
+            Grabbable grabbableScript = leftHolsterObj.GetComponent<Grabbable>();
+            SnapZone snapZone = holsterLeftSceneReference.Value.GetComponent<SnapZone>();
+            snapZone.GrabGrabbable(grabbableScript);
+        }
     }
 }

@@ -51,6 +51,7 @@ public class ToggleNetworkedComponents : MonoBehaviourPunCallbacks
             }
 
             if (agent != null) agent.enabled = enabled;
+            if (GetComponent<Rigidbody>() != null) GetComponent<Rigidbody>().isKinematic = !enabled;
         }
     }
     
@@ -64,6 +65,7 @@ public class ToggleNetworkedComponents : MonoBehaviourPunCallbacks
             }
 
             if (agent != null) agent.enabled = enabled;
+            if (GetComponent<Rigidbody>() != null) GetComponent<Rigidbody>().isKinematic = !enabled;
         }
     }
 }

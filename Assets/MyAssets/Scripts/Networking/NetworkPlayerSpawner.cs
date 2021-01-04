@@ -13,6 +13,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         spawnedPlayerPrefab = PhotonNetwork.Instantiate("Player/Network Player", transform.position, transform.rotation);
+        
         PhotonView playerView = spawnedPlayerPrefab.GetComponent<PhotonView>();
         playerView.Controller.NickName = $"Player {playerView.Controller.ActorNumber}";
     }
